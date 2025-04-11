@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Toaster } from "@/components/ui/sonner"
+import { ParticlesBackground } from "@/components/particles-background"
 
 export default function Home() {
   return (
@@ -18,8 +19,9 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-[#282a36]">
-          <div className="container px-4 md:px-6 mx-auto max-w-5xl">
+        <section className="w-full h-[calc(100vh-4rem)] flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#0b0c1b] to-[#1e1430]">
+          <ParticlesBackground />
+          <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-[#bd93f9] to-[#ff79c6] mb-8 leading-[1.2] pb-2">
@@ -30,10 +32,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Button asChild className="bg-[#bd93f9] hover:bg-[#a277f3] text-white">
+                <Button asChild className="bg-[#5b2c6f] hover:bg-[#76448a] text-white">
                   <Link href="#projects">View Projects</Link>
                 </Button>
-                <Button variant="outline" asChild className="border-[#bd93f9] text-[#bd93f9] hover:bg-[#bd93f9]/10">
+                <Button asChild className="bg-[#282a36] hover:bg-[#3a3c4a] text-white">
                   <Link href="#contact">Contact Me</Link>
                 </Button>
               </div>

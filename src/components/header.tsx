@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 export function Header() {
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#bd93f9]/10 bg-[#282a36]/95 backdrop-blur supports-[backdrop-filter]:bg-[#282a36]/60">
+    <header className="sticky top-0 z-50 w-full border-b border-[#bd93f9]/10 bg-[#1a1c25] backdrop-blur supports-[backdrop-filter]:bg-[#1a1c25]">
       <div className="container px-4 flex h-16 items-center justify-center">
         <div className="flex w-full justify-between items-center">
           <div className="hidden md:flex md:flex-1"></div>
@@ -35,7 +35,7 @@ export function Header() {
               >
                 Contact
               </Link>
-              <Button asChild variant="default" size="sm" className="bg-[#bd93f9] hover:bg-[#a277f3] text-white">
+              <Button asChild variant="default" size="sm" className="bg-[#5b2c6f] hover:bg-[#76448a] text-white">
                 <Link href="https://github.com/zwpaper" target="_blank" rel="noopener noreferrer">
                   GitHub
                 </Link>
