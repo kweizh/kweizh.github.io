@@ -27,17 +27,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-            lfs: true
+          lfs: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
-          node-version: "20"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
-        with:
-          version: 8
 
       - name: Install dependencies
         run: pnpm install
