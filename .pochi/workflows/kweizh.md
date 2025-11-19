@@ -13,6 +13,8 @@ and must be fully compatible with GitHub Pages deployment using the following CI
     path: ./out
 ```
 
+There are images located at public/images could be used in website.
+
 ### Overall Style & Requirements
 
 * Use **avant-garde front-end design**, bold color collisions, and fluid, futuristic interactive animations throughout the site.
