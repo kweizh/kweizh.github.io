@@ -40,6 +40,11 @@ jobs:
         if: github.event.action != 'closed'
         run: pnpm install
 
+      - name: Set preview base uri
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "NEXT_PUBLIC_BASE_PATH=/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
       - name: Build with Next.js
         if: github.event.action != 'closed'
         run: pnpm build
