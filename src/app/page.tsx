@@ -27,7 +27,7 @@ const projects = [
     description: "AI Autonomous Coding Assistant. A powerful tool that helps developers automate coding tasks and improve productivity.",
     tags: ["AI", "TypeScript", "LLM", "VSCode", "CLI"],
     link: "https://github.com/TabbyML/pochi",
-    image: "/images/pochi.png",
+    image: "./images/pochi.png",
     demo: ""
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     description: "Self Hosted AI Coding Assistant. Intelligent code completions directly in your editor, running entirely on your own infrastructure.",
     tags: ["Rust", "AI", "Self-hosted", "VSCode", "CLI"],
     link: "https://github.com/TabbyML/tabby",
-    image: "/images/tabby.png",
+    image: "./images/tabby.png",
     demo: ""
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     description: "A Next Generation UNIX ls Alternative. Modern replacement for ls command with colorful output, icons, and various display options.",
     tags: ["Rust", "CLI", "Unix"],
     link: "https://github.com/lsd-rs/lsd",
-    image: "/images/lsd.png",
+    image: "./images/lsd.png",
     demo: ""
   },
   {
@@ -51,7 +51,7 @@ const projects = [
     description: "Advanced scheduling features for Kubernetes. Framework to enable developers to write custom scheduling plugins.",
     tags: ["Go", "Kubernetes", "Cloud Native"],
     link: "https://github.com/kubernetes-sigs/scheduler-plugins",
-    image: "/images/scheduler-plugins.svg",
+    image: "./images/scheduler-plugins.svg",
     demo: ""
   }
 ];
@@ -93,7 +93,7 @@ export default function Home() {
             className="mb-16 relative w-64 h-64 mx-auto"
           >
             <Image
-              src="/images/logo.png"
+              src="./images/logo.png"
               alt="Logo"
               fill
               className="object-cover rounded-full border-4 border-background shadow-2xl"
