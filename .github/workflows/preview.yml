@@ -1,0 +1,55 @@
+name: Deploy PR Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: pnpm install
+
+      - name: Set preview base uri
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "NEXT_PUBLIC_BASE_PATH=/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+      - name: Build with Next.js
+        if: github.event.action != 'closed'
+        run: pnpm build
+
+      - name: Deploy Preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./out
